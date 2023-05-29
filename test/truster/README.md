@@ -1,4 +1,4 @@
-# Challenge 2 — Truster
+# Challenge 3 — Truster
 
 ## Description
 
